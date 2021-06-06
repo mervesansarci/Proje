@@ -1,0 +1,801 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B90CD6F8-0C53-4170-AB47-34A99B1E5555}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proje.WP.Web</RootNamespace>
+    <AssemblyName>Proje.WP.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44397</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Proje.WP.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Proje.WP.Business\bin\Debug\Proje.WP.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Index1.aspx" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\css\font-awesome.min.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\css\main.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\css\normalize.min.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\fonts\fontawesome-webfont.svg" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\img\logo.png" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\index.html" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\js\custom.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\js\jquery-1.11.0.min.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\js\jquery.nav.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shAutoloader.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushAppleScript.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushAS3.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushBash.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushColdFusion.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushCpp.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushCSharp.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushCss.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushDelphi.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushDiff.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushErlang.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushGroovy.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushJava.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushJavaFX.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushJScript.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushPerl.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushPhp.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushPlain.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushPython.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushRuby.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushSass.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushScala.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushSql.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushVb.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shBrushXml.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shCore.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\scripts\shLegacy.js" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shCore.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shCoreDefault.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shCoreDjango.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shCoreEclipse.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shCoreEmacs.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shCoreFadeToGrey.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shCoreMDUltra.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shCoreMidnight.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shCoreRDark.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shThemeDefault.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shThemeDjango.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shThemeEclipse.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shThemeEmacs.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shThemeFadeToGrey.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shThemeMDUltra.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shThemeMidnight.css" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\syntax-highlighter\styles\shThemeRDark.css" />
+    <Content Include="Tasarim.Template\cart.html" />
+    <Content Include="Tasarim.Template\category.html" />
+    <Content Include="Tasarim.Template\checkout.html" />
+    <Content Include="Tasarim.Template\confirmation.html" />
+    <Content Include="Tasarim.Template\contact.html" />
+    <Content Include="Tasarim.Template\css\main.css" />
+    <Content Include="Tasarim.Template\css\style.css" />
+    <Content Include="Tasarim.Template\img\blog\add.jpg" />
+    <Content Include="Tasarim.Template\img\blog\author.png" />
+    <Content Include="Tasarim.Template\img\blog\blog1.png" />
+    <Content Include="Tasarim.Template\img\blog\blog2.png" />
+    <Content Include="Tasarim.Template\img\blog\blog3.png" />
+    <Content Include="Tasarim.Template\img\blog\c1.jpg" />
+    <Content Include="Tasarim.Template\img\blog\c2.jpg" />
+    <Content Include="Tasarim.Template\img\blog\c3.jpg" />
+    <Content Include="Tasarim.Template\img\blog\c4.jpg" />
+    <Content Include="Tasarim.Template\img\blog\c5.jpg" />
+    <Content Include="Tasarim.Template\img\blog\c6.jpg" />
+    <Content Include="Tasarim.Template\img\blog\cat-post\cat-post-1.jpg" />
+    <Content Include="Tasarim.Template\img\blog\cat-post\cat-post-2.jpg" />
+    <Content Include="Tasarim.Template\img\blog\cat-post\cat-post-3.jpg" />
+    <Content Include="Tasarim.Template\img\blog\causes\causes-1.jpg" />
+    <Content Include="Tasarim.Template\img\blog\causes\causes-2.jpg" />
+    <Content Include="Tasarim.Template\img\blog\causes\causes-3.jpg" />
+    <Content Include="Tasarim.Template\img\blog\feature-img1.jpg" />
+    <Content Include="Tasarim.Template\img\blog\latest-post\l-post-1.jpg" />
+    <Content Include="Tasarim.Template\img\blog\latest-post\l-post-2.jpg" />
+    <Content Include="Tasarim.Template\img\blog\latest-post\l-post-3.jpg" />
+    <Content Include="Tasarim.Template\img\blog\latest-post\l-post-4.jpg" />
+    <Content Include="Tasarim.Template\img\blog\main-blog\m-blog-1.jpg" />
+    <Content Include="Tasarim.Template\img\blog\main-blog\m-blog-2.jpg" />
+    <Content Include="Tasarim.Template\img\blog\main-blog\m-blog-3.jpg" />
+    <Content Include="Tasarim.Template\img\blog\main-blog\m-blog-4.jpg" />
+    <Content Include="Tasarim.Template\img\blog\main-blog\m-blog-5.jpg" />
+    <Content Include="Tasarim.Template\img\blog\next.jpg" />
+    <Content Include="Tasarim.Template\img\blog\popular-post\post1.jpg" />
+    <Content Include="Tasarim.Template\img\blog\popular-post\post2.jpg" />
+    <Content Include="Tasarim.Template\img\blog\popular-post\post3.jpg" />
+    <Content Include="Tasarim.Template\img\blog\popular-post\post4.jpg" />
+    <Content Include="Tasarim.Template\img\blog\post-img1.jpg" />
+    <Content Include="Tasarim.Template\img\blog\post-img2.jpg" />
+    <Content Include="Tasarim.Template\img\blog\prev.jpg" />
+    <Content Include="Tasarim.Template\img\cart.jpg" />
+    <Content Include="Tasarim.Template\img\cart\cart1.png" />
+    <Content Include="Tasarim.Template\img\cart\cart2.png" />
+    <Content Include="Tasarim.Template\img\cart\cart3.png" />
+    <Content Include="Tasarim.Template\img\category\c1.jpg" />
+    <Content Include="Tasarim.Template\img\category\c2.jpg" />
+    <Content Include="Tasarim.Template\img\category\c3.jpg" />
+    <Content Include="Tasarim.Template\img\category\c4.jpg" />
+    <Content Include="Tasarim.Template\img\category\c5.jpg" />
+    <Content Include="Tasarim.Template\img\category\s-p1.jpg" />
+    <Content Include="Tasarim.Template\img\Fevicon.png" />
+    <Content Include="Tasarim.Template\img\gallery\r1.jpg" />
+    <Content Include="Tasarim.Template\img\gallery\r2.jpg" />
+    <Content Include="Tasarim.Template\img\gallery\r3.jpg" />
+    <Content Include="Tasarim.Template\img\gallery\r5.jpg" />
+    <Content Include="Tasarim.Template\img\gallery\r7.jpg" />
+    <Content Include="Tasarim.Template\img\gallery\r8.jpg" />
+    <Content Include="Tasarim.Template\img\home\hero-banner.png" />
+    <Content Include="Tasarim.Template\img\home\hero-slide1.png" />
+    <Content Include="Tasarim.Template\img\home\hero-slide2.png" />
+    <Content Include="Tasarim.Template\img\home\hero-slide3.png" />
+    <Content Include="Tasarim.Template\img\home\parallax-bg.png" />
+    <Content Include="Tasarim.Template\img\instagram\Image-01.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\Image-02.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\Image-03.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\Image-04.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\Image-05.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\Image-06.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\Image-07.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\Image-08.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\ins-1.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\ins-2.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\ins-3.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\ins-4.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\ins-5.jpg" />
+    <Content Include="Tasarim.Template\img\instagram\ins-6.jpg" />
+    <Content Include="Tasarim.Template\img\login.jpg" />
+    <Content Include="Tasarim.Template\img\logo.png" />
+    <Content Include="Tasarim.Template\img\product\card.jpg" />
+    <Content Include="Tasarim.Template\img\product\product-sm-1.png" />
+    <Content Include="Tasarim.Template\img\product\product-sm-2.png" />
+    <Content Include="Tasarim.Template\img\product\product-sm-3.png" />
+    <Content Include="Tasarim.Template\img\product\product-sm-4.png" />
+    <Content Include="Tasarim.Template\img\product\product-sm-5.png" />
+    <Content Include="Tasarim.Template\img\product\product-sm-6.png" />
+    <Content Include="Tasarim.Template\img\product\product-sm-7.png" />
+    <Content Include="Tasarim.Template\img\product\product-sm-8.png" />
+    <Content Include="Tasarim.Template\img\product\product-sm-9.png" />
+    <Content Include="Tasarim.Template\img\product\product1.png" />
+    <Content Include="Tasarim.Template\img\product\product2.png" />
+    <Content Include="Tasarim.Template\img\product\product3.png" />
+    <Content Include="Tasarim.Template\img\product\product4.png" />
+    <Content Include="Tasarim.Template\img\product\product5.png" />
+    <Content Include="Tasarim.Template\img\product\product6.png" />
+    <Content Include="Tasarim.Template\img\product\product7.png" />
+    <Content Include="Tasarim.Template\img\product\product8.png" />
+    <Content Include="Tasarim.Template\img\product\review-1.png" />
+    <Content Include="Tasarim.Template\img\product\review-2.png" />
+    <Content Include="Tasarim.Template\img\product\review-3.png" />
+    <Content Include="Tasarim.Template\img\r1.jpg" />
+    <Content Include="Tasarim.Template\img\r10.jpg" />
+    <Content Include="Tasarim.Template\img\r11.jpg" />
+    <Content Include="Tasarim.Template\img\r12.jpg" />
+    <Content Include="Tasarim.Template\img\r2.jpg" />
+    <Content Include="Tasarim.Template\img\r3.jpg" />
+    <Content Include="Tasarim.Template\img\r4.jpg" />
+    <Content Include="Tasarim.Template\img\r5.jpg" />
+    <Content Include="Tasarim.Template\img\r6.jpg" />
+    <Content Include="Tasarim.Template\img\r7.jpg" />
+    <Content Include="Tasarim.Template\img\r8.jpg" />
+    <Content Include="Tasarim.Template\img\r9.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\bileklik.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\blueset.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\bros.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\bros2.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\colorful1.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\colorful2.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\desenli1.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\desenli2.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\green1.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\green2.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\kupegreen1.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\logo2.png" />
+    <Content Include="Tasarim.Template\img\takilar\logopng.png" />
+    <Content Include="Tasarim.Template\img\takilar\logotasarım1.png" />
+    <Content Include="Tasarim.Template\img\takilar\pinkset.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\purple.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\purple2.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\star1.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\star2.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\ucgenset.jpg" />
+    <Content Include="Tasarim.Template\img\takilar\yoda.jpg" />
+    <Content Include="Tasarim.Template\index.html" />
+    <Content Include="Tasarim.Template\js\main.js" />
+    <Content Include="Tasarim.Template\login.html" />
+    <Content Include="Tasarim.Template\register.html" />
+    <Content Include="Tasarim.Template\single-product.html" />
+    <Content Include="Tasarim.Template\tracking-order.html" />
+    <Content Include="Tasarim.Template\vendors\bootstrap\bootstrap.bundle.min.js" />
+    <Content Include="Tasarim.Template\vendors\bootstrap\bootstrap.min.css" />
+    <Content Include="Tasarim.Template\vendors\contact.js" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\bootstrap.bundle.min.js" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\bootstrap.min.css" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\css\all.min.css" />
+    <Content Include="Tasarim.Template\vendors\jquery.ajaxchimp.min.js" />
+    <Content Include="Tasarim.Template\vendors\jquery.form.js" />
+    <Content Include="Tasarim.Template\vendors\jquery.validate.min.js" />
+    <Content Include="Tasarim.Template\vendors\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Tasarim.Template\vendors\linericon\fonts\Linearicons-Free.svg" />
+    <Content Include="Tasarim.Template\vendors\linericon\style.css" />
+    <Content Include="Tasarim.Template\vendors\mail-script.js" />
+    <Content Include="Tasarim.Template\vendors\nice-select\jquery.nice-select.min.js" />
+    <Content Include="Tasarim.Template\vendors\nice-select\nice-select.css" />
+    <Content Include="Tasarim.Template\vendors\nouislider\nouislider.min.css" />
+    <Content Include="Tasarim.Template\vendors\nouislider\nouislider.min.js" />
+    <Content Include="Tasarim.Template\vendors\owl-carousel\owl.carousel.min.css" />
+    <Content Include="Tasarim.Template\vendors\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Tasarim.Template\vendors\owl-carousel\owl.theme.default.min.css" />
+    <Content Include="Tasarim.Template\vendors\skrollr.min.js" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\demo-files\demo.css" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\fonts\themify.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\ie7\ie7.css" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\ie7\ie7.js" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\index.html" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\readme.txt" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\agenda.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\alarm-clock.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\alert.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\align-center.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\align-justify.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\align-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\align-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\anchor.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\android.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\angle-double-down.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\angle-double-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\angle-double-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\angle-double-up.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\angle-down.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\angle-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\angle-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\angle-up.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\announcement.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\apple.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\archive.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrow-circle-down.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrow-circle-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrow-circle-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrow-circle-up.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrow-down.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrow-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrow-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrow-top-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrow-top-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrow-up.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrow.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrows-corner.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrows-horizontal.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\arrows-vertical.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\back-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\back-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\bag.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\bar-chart-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\bar-chart.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\basketball.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\bell.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\blackboard.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\bolt-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\bolt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\book.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\bookmark-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\bookmark.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\briefcase.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\brush-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\brush.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\calendar.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\camera.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\car.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\check-box.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\check.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\clip.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\clipboard.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\close.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\cloud-down.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\cloud-up.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\cloud.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\comment-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\comment.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\comments-smiley.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\comments.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\control-backward.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\control-eject.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\control-forward.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\control-pause.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\control-play.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\control-record.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\control-shuffle.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\control-skip-backward.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\control-skip-forward.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\control-stop.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\credit-card.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\crown.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\css3.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\cup.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\cut.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\dashboard.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\desktop.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\direction-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\direction.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\download.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\dribbble.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\dropbox-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\dropbox.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\drupal.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\email.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\envelope.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\eraser.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\exchange-vertical.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\export.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\eye.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\face-sad.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\face-smile.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\facebook.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\file.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\files.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\filter.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\flag-alt-2.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\flag-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\flag.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\flickr-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\flickr.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\folder.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\fullscreen.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\gallery.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\game.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\gift.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\github.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\google.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\hand-drag.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\hand-open.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\hand-point-down.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\hand-point-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\hand-point-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\hand-point-up.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\hand-stop.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\harddrive.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\harddrives.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\headphone-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\headphone.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\heart-broken.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\heart.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\help-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\help.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\home.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\html5.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\hummer.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\id-badge.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\image.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\import.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\infinite.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\info-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\info.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\ink-pen.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\instagram.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\Italic.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\joomla.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\jsfiddle.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\key.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layers-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layers.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-accordion-list.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-accordion-merged.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-accordion-separated.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-column2-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-column2.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-column3-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-column3.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-column4-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-column4.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-cta-btn-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-cta-btn-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-cta-center.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-cta-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-cta-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-grid2-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-grid2-thumb.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-grid2.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-grid3-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-grid3.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-grid4-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-grid4.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-line-solid.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-list-large-image.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-list-post.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-list-thumb-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-list-thumb.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-media-center-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-media-center.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-media-left-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-media-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-media-overlay-alt-2.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-media-overlay-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-media-overlay.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-media-right-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-media-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-menu-full.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-menu-separated.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-menu-v.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-menu.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-placeholder.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-sidebar-2.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-sidebar-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-sidebar-none.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-sidebar-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-slider-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-slider.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-tab-min.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-tab-v.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-tab-window.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-tab.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-width-default-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-width-default.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout-width-full.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\layout.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\light-bulb.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\line-dashed.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\line-dotted.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\line-double.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\link.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\linkedin.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\linux.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\list-ol.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\list.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\location-arrow.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\location-pin.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\lock.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\loop.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\magnet.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\map-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\map.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\marker-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\marker.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\medall-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\medall.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\menu-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\menu.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\microphone-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\microphone.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\microsoft-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\microsoft.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\minus.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\mobile.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\money.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\more-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\more.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\mouse-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\mouse.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\music-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\music.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\na.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\new-window.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\notepad.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\package.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\paint-bucket.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\paint-roller.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\palette.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\panel.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\paragraph.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\pencil-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\pencil-alt2.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\pencil.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\pie-chart.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\pin-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\pin.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\pin2.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\pinterest-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\pinterest.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\plug.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\plus.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\power-off.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\printer.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\pulse.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\quote-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\quote-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\receipt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\reddit.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\reload.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\rocket.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\rss-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\rss.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\ruler-alt-2.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\ruler-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\ruler-pencil.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\ruler.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\save-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\save.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\search.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\server.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\settings.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\share-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\share.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\sharethis-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\sharethis.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\shield.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\shift-left-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\shift-left.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\shift-right-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\shift-right.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\shine.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\shopping-cart-full.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\shopping-cart.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\shortcode.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\signal.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\skype.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\slice.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\smallcap.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\soundcloud.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\split-h.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\split-v-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\split-v.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\spray.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\stack-overflow.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\stamp.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\star.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\stats-down.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\stats-up.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\support.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\tablet.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\tag.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\target.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\text.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\themify-favicon-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\themify-favicon.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\themify-logo.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\thought.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\thumb-down.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\thumb-up.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\ticket.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\time.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\timer.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\trash.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\trello.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\truck.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\tumblr-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\tumblr.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\twitter-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\twitter.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\underline.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\unlink.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\unlock.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\upload.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\uppercase.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\user.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\vector.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\video-camera.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\video-clapper.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\view-grid.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\view-list-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\view-list.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\vimeo-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\vimeo.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\volume.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\wallet.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\wand.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\wheelchair.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\widget-alt.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\widget.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\widgetized.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\window.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\wordpress.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\world.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\write.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\yahoo.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\youtube.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\zip.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\zoom-in.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\SVG\zoom-out.svg" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\themify-icons.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index1.aspx.cs">
+      <DependentUpon>Index1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index1.aspx.designer.cs">
+      <DependentUpon>Index1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Tasarim.Template\.vs\aroma-master\config\applicationhost.config" />
+    <Content Include="Tasarim.Template\.vs\ProjectSettings.json" />
+    <Content Include="Tasarim.Template\.vs\slnx.sqlite" />
+    <Content Include="Tasarim.Template\.vs\template\config\applicationhost.config" />
+    <Content Include="Tasarim.Template\.vs\VSWorkspaceState.json" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\fonts\fontawesome-webfont.eot" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\fonts\fontawesome-webfont.woff" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\fonts\FontAwesome.otf" />
+    <Content Include="Tasarim.Template\Aroma Shop-doc\img\Thumbs.db" />
+    <Content Include="Tasarim.Template\img\blog\.DS_Store" />
+    <Content Include="Tasarim.Template\img\gallery\.DS_Store" />
+    <Content Include="Tasarim.Template\img\Thumbs.db" />
+    <Content Include="Tasarim.Template\scss\main.scss" />
+    <Content Include="Tasarim.Template\scss\style.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_blog.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_btn.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_cart.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_category.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_checkout.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_confirmation.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_contact.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_footer.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_header.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_home.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_instagram.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_login.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_mixins.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_register.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_reset.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_responsive.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_section-intro.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_single-product.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_tracking.scss" />
+    <Content Include="Tasarim.Template\scss\theme\_variables.scss" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Tasarim.Template\vendors\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Tasarim.Template\vendors\linericon\.DS_Store" />
+    <Content Include="Tasarim.Template\vendors\linericon\fonts\Linearicons-Free.eot" />
+    <Content Include="Tasarim.Template\vendors\linericon\fonts\Linearicons-Free.ttf" />
+    <Content Include="Tasarim.Template\vendors\linericon\fonts\Linearicons-Free.woff" />
+    <Content Include="Tasarim.Template\vendors\linericon\fonts\Linearicons-Free.woff2" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\fonts\themify.eot" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\fonts\themify.ttf" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\fonts\themify.woff" />
+    <Content Include="Tasarim.Template\vendors\themify-icons\Themify IconFonts 5-23-2014.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tasarim.Template\.vs\aroma-master\v16\" />
+    <Folder Include="Tasarim.Template\.vs\template\v16\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Proje.WP.Business\Proje.WP.Business.csproj">
+      <Project>{61e62f53-4b3e-4283-85d9-bbf55ecc2c87}</Project>
+      <Name>Proje.WP.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54767</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44397/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

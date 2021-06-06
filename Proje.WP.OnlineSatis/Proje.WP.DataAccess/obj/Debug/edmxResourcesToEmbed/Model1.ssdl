@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="onlineSatisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="kategori">
+    <Key>
+      <PropertyRef Name="kategoriID" />
+    </Key>
+    <Property Name="kategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kategoriAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="kategoriAciklama" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="marka">
+    <Key>
+      <PropertyRef Name="markaID" />
+    </Key>
+    <Property Name="markaID" Type="int" Nullable="false" />
+    <Property Name="markaAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="musteri">
+    <Key>
+      <PropertyRef Name="musteriID" />
+    </Key>
+    <Property Name="musteriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="musteriAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="musteriSoyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="telefon" Type="int" />
+    <Property Name="sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="musteriAdresID" Type="int" />
+  </EntityType>
+  <EntityType Name="musteriAdres">
+    <Key>
+      <PropertyRef Name="musteriAdresID" />
+    </Key>
+    <Property Name="musteriAdresID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="il" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ilce" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mahalle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sokak" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="daire" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sepet">
+    <Key>
+      <PropertyRef Name="sepetID" />
+    </Key>
+    <Property Name="sepetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urunID" Type="int" Nullable="false" />
+    <Property Name="musteriID" Type="int" Nullable="false" />
+    <Property Name="Adet" Type="int" Nullable="false" />
+    <Property Name="sepetToplamTutar" Type="money" />
+  </EntityType>
+  <EntityType Name="siparis">
+    <Key>
+      <PropertyRef Name="siparisID" />
+    </Key>
+    <Property Name="siparisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="musteriID" Type="int" Nullable="false" />
+    <Property Name="satisTarih" Type="date" Nullable="false" />
+    <Property Name="toplamTutar" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="sepetteMi" Type="bit" Nullable="false" />
+    <Property Name="kargoTakipNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="siparisDurumID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="siparisDetay">
+    <Key>
+      <PropertyRef Name="siparisDetayID" />
+    </Key>
+    <Property Name="siparisDetayID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="siparisID" Type="int" Nullable="false" />
+    <Property Name="urunAdet" Type="int" Nullable="false" />
+    <Property Name="toplamTutar" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="siparisDurum">
+    <Key>
+      <PropertyRef Name="siparisDurumID" />
+    </Key>
+    <Property Name="siparisDurumID" Type="int" Nullable="false" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="urun">
+    <Key>
+      <PropertyRef Name="urunID" />
+    </Key>
+    <Property Name="urunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urunAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="urunFiyati" Type="money" Nullable="false" />
+    <Property Name="urunEklenmeTarihi" Type="datetime" Nullable="false" />
+    <Property Name="KategoriID" Type="int" Nullable="false" />
+    <Property Name="MarkaID" Type="int" Nullable="false" />
+    <Property Name="urunAciklama" Type="nvarchar" MaxLength="200" />
+    <Property Name="urunKDV" Type="int" Nullable="false" />
+    <Property Name="urunStok" Type="int" Nullable="false" />
+    <Property Name="isActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_musteri_musteriAdres">
+    <End Role="musteriAdres" Type="Self.musteriAdres" Multiplicity="0..1" />
+    <End Role="musteri" Type="Self.musteri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="musteriAdres">
+        <PropertyRef Name="musteriAdresID" />
+      </Principal>
+      <Dependent Role="musteri">
+        <PropertyRef Name="musteriAdresID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sepet_musteri">
+    <End Role="musteri" Type="Self.musteri" Multiplicity="1" />
+    <End Role="sepet" Type="Self.sepet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="musteri">
+        <PropertyRef Name="musteriID" />
+      </Principal>
+      <Dependent Role="sepet">
+        <PropertyRef Name="musteriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sepet_urun">
+    <End Role="urun" Type="Self.urun" Multiplicity="1" />
+    <End Role="sepet" Type="Self.sepet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="urun">
+        <PropertyRef Name="urunID" />
+      </Principal>
+      <Dependent Role="sepet">
+        <PropertyRef Name="urunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_siparis_musteri">
+    <End Role="musteri" Type="Self.musteri" Multiplicity="1" />
+    <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="musteri">
+        <PropertyRef Name="musteriID" />
+      </Principal>
+      <Dependent Role="siparis">
+        <PropertyRef Name="musteriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_siparis_siparisDurum">
+    <End Role="siparisDurum" Type="Self.siparisDurum" Multiplicity="1" />
+    <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="siparisDurum">
+        <PropertyRef Name="siparisDurumID" />
+      </Principal>
+      <Dependent Role="siparis">
+        <PropertyRef Name="siparisDurumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_siparisDetay_siparis">
+    <End Role="siparis" Type="Self.siparis" Multiplicity="1" />
+    <End Role="siparisDetay" Type="Self.siparisDetay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="siparis">
+        <PropertyRef Name="siparisID" />
+      </Principal>
+      <Dependent Role="siparisDetay">
+        <PropertyRef Name="siparisID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_urun_kategori">
+    <End Role="kategori" Type="Self.kategori" Multiplicity="1" />
+    <End Role="urun" Type="Self.urun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kategori">
+        <PropertyRef Name="kategoriID" />
+      </Principal>
+      <Dependent Role="urun">
+        <PropertyRef Name="KategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_urun_marka">
+    <End Role="marka" Type="Self.marka" Multiplicity="1" />
+    <End Role="urun" Type="Self.urun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="marka">
+        <PropertyRef Name="markaID" />
+      </Principal>
+      <Dependent Role="urun">
+        <PropertyRef Name="MarkaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="onlineSatisModelStoreContainer">
+    <EntitySet Name="kategori" EntityType="Self.kategori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="marka" EntityType="Self.marka" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="musteri" EntityType="Self.musteri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="musteriAdres" EntityType="Self.musteriAdres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sepet" EntityType="Self.sepet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="siparis" EntityType="Self.siparis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="siparisDetay" EntityType="Self.siparisDetay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="siparisDurum" EntityType="Self.siparisDurum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="urun" EntityType="Self.urun" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_musteri_musteriAdres" Association="Self.FK_musteri_musteriAdres">
+      <End Role="musteriAdres" EntitySet="musteriAdres" />
+      <End Role="musteri" EntitySet="musteri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sepet_musteri" Association="Self.FK_sepet_musteri">
+      <End Role="musteri" EntitySet="musteri" />
+      <End Role="sepet" EntitySet="sepet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sepet_urun" Association="Self.FK_sepet_urun">
+      <End Role="urun" EntitySet="urun" />
+      <End Role="sepet" EntitySet="sepet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_siparis_musteri" Association="Self.FK_siparis_musteri">
+      <End Role="musteri" EntitySet="musteri" />
+      <End Role="siparis" EntitySet="siparis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_siparis_siparisDurum" Association="Self.FK_siparis_siparisDurum">
+      <End Role="siparisDurum" EntitySet="siparisDurum" />
+      <End Role="siparis" EntitySet="siparis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_siparisDetay_siparis" Association="Self.FK_siparisDetay_siparis">
+      <End Role="siparis" EntitySet="siparis" />
+      <End Role="siparisDetay" EntitySet="siparisDetay" />
+    </AssociationSet>
+    <AssociationSet Name="FK_urun_kategori" Association="Self.FK_urun_kategori">
+      <End Role="kategori" EntitySet="kategori" />
+      <End Role="urun" EntitySet="urun" />
+    </AssociationSet>
+    <AssociationSet Name="FK_urun_marka" Association="Self.FK_urun_marka">
+      <End Role="marka" EntitySet="marka" />
+      <End Role="urun" EntitySet="urun" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

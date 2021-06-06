@@ -1,0 +1,34 @@
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\Proje.WP.Business.dll
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\Proje.WP.Business.pdb
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.csprojAssemblyReference.cache
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.csproj.CoreCompileInputs.cache
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.dll
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.pdb
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\Proje.WP.Business.dll.config
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\EntityFramework.dll
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\Proje.WP.DataAccess.dll
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\Proje.WP.DataAccess.pdb
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\Proje.WP.DataAccess.dll.config
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\EntityFramework.xml
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\msı\source\repos\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.csproj.CopyComplete
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.csproj.AssemblyReference.cache
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.csproj.CoreCompileInputs.cache
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\Proje.WP.Business.dll.config
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\Proje.WP.Business.dll
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\Proje.WP.Business.pdb
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\EntityFramework.dll
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\EntityFramework.SqlServer.dll
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\Proje.WP.DataAccess.dll
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\Proje.WP.DataAccess.pdb
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\Proje.WP.DataAccess.dll.config
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\EntityFramework.xml
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\bin\Debug\EntityFramework.SqlServer.xml
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.csproj.CopyComplete
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.dll
+\\Mac\Home\Downloads\proje\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.pdb
+C:\Users\msı\OneDrive\Masaüstü\Yeni klasör (4)\proje\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.csproj.AssemblyReference.cache
+C:\Users\msı\OneDrive\Masaüstü\Yeni klasör (4)\proje\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.csproj.CoreCompileInputs.cache
+C:\Users\msı\OneDrive\Masaüstü\Yeni klasör (4)\proje\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.dll
+C:\Users\msı\OneDrive\Masaüstü\Yeni klasör (4)\proje\Proje.WP.OnlineSatis\Proje.WP.Business\obj\Debug\Proje.WP.Business.pdb

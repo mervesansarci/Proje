@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="onlineSatisModelStoreContainer" CdmEntityContainer="onlineSatisEntities">
+    <EntitySetMapping Name="kategori">
+      <EntityTypeMapping TypeName="onlineSatisModel.kategori">
+        <MappingFragment StoreEntitySet="kategori">
+          <ScalarProperty Name="kategoriID" ColumnName="kategoriID" />
+          <ScalarProperty Name="kategoriAdi" ColumnName="kategoriAdi" />
+          <ScalarProperty Name="kategoriAciklama" ColumnName="kategoriAciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="marka">
+      <EntityTypeMapping TypeName="onlineSatisModel.marka">
+        <MappingFragment StoreEntitySet="marka">
+          <ScalarProperty Name="markaID" ColumnName="markaID" />
+          <ScalarProperty Name="markaAdi" ColumnName="markaAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="musteri">
+      <EntityTypeMapping TypeName="onlineSatisModel.musteri">
+        <MappingFragment StoreEntitySet="musteri">
+          <ScalarProperty Name="musteriID" ColumnName="musteriID" />
+          <ScalarProperty Name="musteriAdi" ColumnName="musteriAdi" />
+          <ScalarProperty Name="musteriSoyadi" ColumnName="musteriSoyadi" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="musteriAdresID" ColumnName="musteriAdresID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="musteriAdres">
+      <EntityTypeMapping TypeName="onlineSatisModel.musteriAdres">
+        <MappingFragment StoreEntitySet="musteriAdres">
+          <ScalarProperty Name="musteriAdresID" ColumnName="musteriAdresID" />
+          <ScalarProperty Name="il" ColumnName="il" />
+          <ScalarProperty Name="ilce" ColumnName="ilce" />
+          <ScalarProperty Name="mahalle" ColumnName="mahalle" />
+          <ScalarProperty Name="sokak" ColumnName="sokak" />
+          <ScalarProperty Name="daire" ColumnName="daire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sepet">
+      <EntityTypeMapping TypeName="onlineSatisModel.sepet">
+        <MappingFragment StoreEntitySet="sepet">
+          <ScalarProperty Name="sepetID" ColumnName="sepetID" />
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+          <ScalarProperty Name="musteriID" ColumnName="musteriID" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="sepetToplamTutar" ColumnName="sepetToplamTutar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="siparis">
+      <EntityTypeMapping TypeName="onlineSatisModel.siparis">
+        <MappingFragment StoreEntitySet="siparis">
+          <ScalarProperty Name="siparisID" ColumnName="siparisID" />
+          <ScalarProperty Name="musteriID" ColumnName="musteriID" />
+          <ScalarProperty Name="satisTarih" ColumnName="satisTarih" />
+          <ScalarProperty Name="toplamTutar" ColumnName="toplamTutar" />
+          <ScalarProperty Name="sepetteMi" ColumnName="sepetteMi" />
+          <ScalarProperty Name="kargoTakipNo" ColumnName="kargoTakipNo" />
+          <ScalarProperty Name="siparisDurumID" ColumnName="siparisDurumID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="siparisDetay">
+      <EntityTypeMapping TypeName="onlineSatisModel.siparisDetay">
+        <MappingFragment StoreEntitySet="siparisDetay">
+          <ScalarProperty Name="siparisDetayID" ColumnName="siparisDetayID" />
+          <ScalarProperty Name="siparisID" ColumnName="siparisID" />
+          <ScalarProperty Name="urunAdet" ColumnName="urunAdet" />
+          <ScalarProperty Name="toplamTutar" ColumnName="toplamTutar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="siparisDurum">
+      <EntityTypeMapping TypeName="onlineSatisModel.siparisDurum">
+        <MappingFragment StoreEntitySet="siparisDurum">
+          <ScalarProperty Name="siparisDurumID" ColumnName="siparisDurumID" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="urun">
+      <EntityTypeMapping TypeName="onlineSatisModel.urun">
+        <MappingFragment StoreEntitySet="urun">
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+          <ScalarProperty Name="urunAdi" ColumnName="urunAdi" />
+          <ScalarProperty Name="urunFiyati" ColumnName="urunFiyati" />
+          <ScalarProperty Name="urunEklenmeTarihi" ColumnName="urunEklenmeTarihi" />
+          <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
+          <ScalarProperty Name="MarkaID" ColumnName="MarkaID" />
+          <ScalarProperty Name="urunAciklama" ColumnName="urunAciklama" />
+          <ScalarProperty Name="urunKDV" ColumnName="urunKDV" />
+          <ScalarProperty Name="urunStok" ColumnName="urunStok" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
